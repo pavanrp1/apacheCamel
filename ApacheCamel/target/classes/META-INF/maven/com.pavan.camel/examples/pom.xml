@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.pavan.camel</groupId>
+	<artifactId>examples</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>ApacheCamel</name>
+
+	<properties>
+		<camel.version>2.15.3</camel.version>
+		<spring4-version>4.2.5.RELEASE</spring4-version>
+		<junit-version>4.11</junit-version>
+		<slf4j-version>1.7.13</slf4j-version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-core</artifactId>
+			<version>${camel.version}</version>
+			<type>test-jar</type>
+			<!-- <scope>test</scope> -->
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-testng</artifactId>
+			<version>2.17.0</version>
+<!-- 			<scope>test</scope> -->
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-test</artifactId>
+			<version>2.17.0</version>
+<!-- 			<scope>test</scope> -->
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>junit</groupId> -->
+<!-- 			<artifactId>junit4</artifactId> -->
+<!-- 			<scope>test</scope> -->
+<!-- 			<version>${junit-version}</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.apache.camel</groupId> -->
+<!-- 			<artifactId>camel-core</artifactId> -->
+<!-- 			<type>test-jar</type> -->
+<!-- 			<scope>test</scope> -->
+<!-- 			<version>${camel.version}</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.slf4j</groupId> -->
+<!-- 			<artifactId>slf4j-log4j12</artifactId> -->
+<!-- 			<scope>test</scope> -->
+<!-- 			<version>${slf4j-version}</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.apache.camel</groupId> -->
+<!-- 			<artifactId>camel-spring</artifactId> -->
+<!-- 			<version>2.17.0</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.apache.camel</groupId> -->
+<!-- 			<artifactId>camel-component</artifactId> -->
+<!-- 			<version>1.4.0</version> -->
+<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.apache.camel</groupId> -->
+		<!-- <artifactId>camel-spring-dm</artifactId> -->
+		<!-- <version>${camel.version}</version> -->
+		<!-- </dependency> -->
+	</dependencies>
+</project>

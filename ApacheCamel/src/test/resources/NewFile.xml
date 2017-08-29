@@ -1,0 +1,46 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd ">
+	<!-- START SNIPPET: e1 -->
+	<camelContext xmlns="http://camel.apache.org/schema/spring">
+		<route>
+			<from uri="direct:start" />
+			<recipientList>
+				<header>listOfVendors</header>
+			</recipientList>
+		</route>
+		<route>
+			<from uri="seda:quoteAggregator" />
+			<aggregate strategyRef="aggregatorStrategy"
+				completionTimeout="1000">
+				<correlationExpression>
+					<header>quoteRequestId</header>
+				</correlationExpression>
+				<to uri="mock:result" />
+			</aggregate>
+		</route>
+	</camelContext>
+	<!-- END SNIPPET: e1 -->
+	<!-- START SNIPPET: e2 -->
+	<bean id="aggregatorStrategy"
+		class="com.pavan.apche.camel.scattergather.LowestQuoteAggregationStrategy" />
+	<bean id="vendor1"
+		class="com.pavan.apche.camel.scattergather.MyVendor">
+		<constructor-arg>
+			<value>1</value>
+		</constructor-arg>
+	</bean>
+	<bean id="vendor2"
+		class="com.pavan.apche.camel.scattergather.MyVendor">
+		<constructor-arg>
+			<value>2</value>
+		</constructor-arg>
+	</bean>
+	<bean id="vendor3"
+		class="com.pavan.apche.camel.scattergather.MyVendor">
+		<constructor-arg>
+			<value>3</value>
+		</constructor-arg>
+	</bean>
+	<!-- END SNIPPET: e2 -->
+</beans>
